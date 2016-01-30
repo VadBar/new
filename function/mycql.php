@@ -1,34 +1,28 @@
 <?php
-function mysqlconnect()
+class DB
 {
-    $start = mysql_connect('localhost','root','');
-    mysql_select_db('test');
-}
-
-function sqlput($lans)
-{
-    mysqlconnect();
-    mysql_query($lans);
-}
-
-/**
- * @param $res
- * @return array
- */
-function mysqlquery($res)
-{
-    mysqlconnect();
-    $red = mysql_query($res);
-    $array = [];
-    while (false !== $row = mysql_fetch_assoc($red)){
-        array_push($array,$row);
+  public  function __construct()
+   {
+       mysql_connect('localhost','root','');
+       mysql_select_db('test');
+   }
+    public function queryAll($resed,$class='stdClass')
+    {
+        $red = mysql_query($resed);
+        $array = [];
+        while (false !== $row = mysql_fetch_object($red,$class)){
+            array_push($array,$row);
+        }
+        return $array;
     }
-    return $array;
-}
 
-function mysqlnews($resed){
-    mysqlconnect();
-    $red = mysql_query($resed);
-    $row = mysql_fetch_array($red);
-    return $row;
+    public function queryOne($resed,$class='stdClass'){
+       $res=mysql_query($resed);
+       $row=mysql_fetch_object($res,$class);
+       return $row;
+   }
+    public function sqlput($lans)
+    {
+        mysql_query($lans);
+    }
 }

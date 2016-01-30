@@ -1,6 +1,5 @@
 <?php
 session_start();
-require(__DIR__ . '/../models/mode.php');
 require(__DIR__ . '/../function/function.php');
 if(!empty($_POST)){
     $data = [];
@@ -12,24 +11,24 @@ if(!empty($_POST)){
                 $data['image'] = $res;
                 }else{
                     $_SESSION['error'] = 'Изображение не соответствует нужным параметрам';
-                    header('Location:http://localhost/new/vizual/index.php');
+                    header('Location:http://new/index.php?cntr=Image&act=Putimage');
                     exit;
                 }
             }
         }else{
             $_SESSION['error'] = 'Изображение не выбрано';
-            header('Location:http://localhost/new/vizual/index.php');
+            header('Location:http://new/index.php?cntr=Image&act=Putimage');
             exit;
         }
     }else{
         $_SESSION['error'] = 'Введите название';
-        header('Location:http://localhost/new/vizual/index.php');
+        header('Location:http://new/index.php?cntr=Image&act=Putimage');
         exit;
     }
     if(isset($data['title']) && isset($data['image'])) {
-       putfile($data);
+        News::putfile($data);
         $_SESSION['error']= 'Файл добавлен!';
-        header('Location:http://localhost/new/vizual/index.php');
+        header('Location:http://new/index.php?cntr=Image&act=Putimage');
         exit;
     }
 ?>

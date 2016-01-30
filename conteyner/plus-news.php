@@ -1,8 +1,6 @@
 <?php
 session_start();
 require __DIR__ . '/../function/news-plus.php';
-require __DIR__ . '/../models/value.php';
-
 
 $article['image'] = $_POST['image'];
 if(isset($_POST)){
@@ -18,66 +16,41 @@ if(isset($_POST)){
                        if(false !== $res){
                            $article['image']= $res;
                            if(isset($article['header']) && isset($article['padding']) && isset($article['image'])){
-                               article_put($article);
-                               header('Location:http://localhost/new/vizual/news.php');
+                               News::article_put($article);
+                               header('Location:http://new/index.php?cntr=Newsed&act=All');
                                exit;
                            }
                    }else{
                            if (isset($article['header']) && isset($article['padding'])) {
-                               article_two_put($article);
-                               header('Location:http://localhost/new/vizual/news.php');
+                               News::article_two_put($article);
+                               header('Location:http://new/index.php?cntr=Newsed&act=All');
                                exit;
                            }
                        }
                }else{
                    $_SESSION['error'] = 'Статья не написана!';
-                   header('Location:http://localhost/new/vizual/plus-news.php');
+                   header('Location:http://new/index.php?cntr=Newsed&act=plusNews');
                    exit;
                }
            }else{
                $_SESSION['error'] = 'Заголовок не написан!';
-               header('Location:http://localhost/new/vizual/plus-news.php');
+               header('Location:http://new/index.php?cntr=Newsed&act=plusNews');
                exit;
            }
        }else{
            $_SESSION['error'] = 'Статья не написана!';
-           header('Location:http://localhost/new/vizual/plus-news.php');
+           header('Location:http://new/index.php?cntr=Newsed&act=plusNews');
            exit;
        }
    }else{
        $_SESSION['error'] = 'Заголовок не написан!';
-       header('Location:http://localhost/new/vizual/plus-news.php');
+       header('Location:http://new/index.php?cntr=Newsed&act=plusNews');
        exit;
    }
 
 }else{
     $_SESSION['error'] = 'Не заполнены необходимые строки!';
-    header('Location:http://localhost/new/vizual/plus-news.php');
+    header('Location:http://new/index.php?cntr=Newsed&act=plusNews');
     exit;
 }
-
-
-
-
-
-
-
-
-
-if(headers($article)){
-    if(padding($article)){
-
-
-        }else {
-
-        }
-    }else{
-        $_SESSION['error'] = 'Статья не написана!';
-        header('Location:http://localhost/new/vizual/plus-news.php');
-        exit;
-    }
-}else{
-    $_SESSION['error'] = 'Заголовок не написан!';
-    header('Location:http://localhost/new/vizual/plus-news.php');
-    exit;
 }

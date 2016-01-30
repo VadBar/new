@@ -6,21 +6,21 @@ session_start();
 <head>
     <title>!DOCTYPE</title>
     <meta charset="utf-8">
-    <link href = "style.css" rel = "stylesheet">
+    <link href = "http://new/vizual/style.css" rel = "stylesheet">
 </head>
 <body>
 <div id ="windows">
     <div id="menu">
         <ul>
             <li><a href="#"><h2>Регистрация</h2></a></li>
-            <li><a href="galary.php"><h2>Галерея</h2></a></li>
-            <li><a href="news.php"><h2>Новости</h2></a></li>
-            <li><a href="../models/exit-admin.php"><h2>Выход</h2></a></li>
+            <li><a href="http://new/index.php?cntr=Image&act=Galary"><h2>Галерея</h2></a></li>
+            <li><a href="http://new/index.php?cntr=Newsed&act=One"><h2>Новости</h2></a></li>
+            <li><a href="http://new/index.php?cntr=Coocie&act=exitAdmin"><h2>Выход</h2></a></li>
         </ul>
     </div>
     <div id="plus">
         <h1>Добавить новость</h1>
-     <form action ="http://localhost/new/conteyner/plus-news.php" method = "POST" enctype ="multipart/form-data" id ="new-form">
+     <form action ="http://new/index.php?cntr=Newsed&act=contentNews" method = "POST" enctype ="multipart/form-data" id ="new-form">
          <lable for = "new-image">Прикрепить изображение</lable>
          <br>
          <input type="file" name = "image"id = "new-image">

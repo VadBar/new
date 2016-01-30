@@ -1,12 +1,9 @@
-<?php
-require __DIR__ . '/../conteyner/conteyner.php';
-?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>!DOCTYPE</title>
     <meta charset="utf-8">
-    <link href = "style.css" rel = "stylesheet">
+    <link href = "http://new/vizual/style.css" rel = "stylesheet">
 </head>
 <body>
 <div id ="windows">
@@ -16,8 +13,8 @@ require __DIR__ . '/../conteyner/conteyner.php';
             echo '
      <ul>
          <li><a href="#"><h2>Регистрация</h2></a></li>
-         <li><a href="galary.php"><h2>Галерея</h2></a></li>
-         <li><a href="news.php"><h2>Новости</h2></a></li>
+         <li><a href="http://new/index.php?cntr=Image&act=Galary"><h2>Галерея</h2></a></li>
+        <li><a href="http://new/index.php?cntr=Newsed&act=All"><h2>Новости</h2></a></li>
     </ul>
         <form action = "#" method="POST" id = "formeth">
             <table id = "table">
@@ -45,9 +42,8 @@ require __DIR__ . '/../conteyner/conteyner.php';
             echo '
     <ul>
         <li><a href="#"><h2>Регистрация</h2></a></li>
-        <li><a href="galary.php"><h2>Галерея</h2></a></li>
-        <li><a href="news.php"><h2>Новости</h2></a></li>
-        <li><a href="plus-news.php"><h2>Добавить новость</h2></a></li>
+        <li><a href="http://new/index.php?cntr=Image&act=Galary"><h2>Галерея</h2></a></li>
+        <li><a href="http://new/index.php?cntr=Newsed&act=All"><h2>Новости</h2></a></li>
         <li><a href="../conteyner/exit-admin.php"><h2>Выход</h2></a></li>
     </ul>';
         }

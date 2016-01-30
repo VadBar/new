@@ -3,12 +3,12 @@
 <head>
     <title>!DOCTYPE</title>
     <meta charset="utf-8">
-    <link href = "http://localhost/new/vizual/style.css" rel = "stylesheet">
+    <link href = "http://new/vizual/style.css" rel = "stylesheet">
 </head>
 <body>
 <div id ="windows">
     <h1>Вход для администрации</h1>
-            <form action = "http://localhost/new/conteyner/admin.php" method="POST" id = "form">
+            <form action = "http://new/index.php?cntr=Coocie&act=startAdmin" method="POST" id = "form">
                 <table id = "table">
                     <tr>
                         <th><lable for ="login">Логин</lable></th>

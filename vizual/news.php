@@ -1,38 +1,36 @@
 <?php
-require __DIR__ . '/../conteyner/conteyner.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>!DOCTYPE</title>
     <meta charset="utf-8">
-    <link href = "http://localhost/new/vizual/style.css" rel = "stylesheet">
+    <link href = "http://new/vizual/style.css" rel = "stylesheet">
 </head>
 <body>
 <div id ="windows">
     <div id="menu">
         <?php
-        if(ifuser()){
+        if(empty($ifuser)){
             echo ' <ul>
-            <li><a href="start.php"><h2>Главная</h2></a></li>
+            <li><a href="http://new/index.php"><h2>Главная</h2></a></li>
             <li><a href="#"><h2>Регистрация</h2></a></li>
-            <li><a href="galary.php"><h2>Галерея</h2></a></li>
-            <li><a href="news.php"><h2>Новости</h2></a></li>
+            <li><a href="http://new/index.php?cntr=Image&act=Galary"><h2>Галерея</h2></a></li>
+            <li><a href="http://new/index.php?cntr=Newsed&act=All"><h2>Новости</h2></a></li>
         </ul>';
         }else{
             echo '
         <ul>
-            <li><a href="start.php"><h2>Главная</h2></a></li>
+            <li><a href="http://new/index.php"><h2>Главная</h2></a></li>
             <li><a href="#"><h2>Регистрация</h2></a></li>
-            <li><a href="galary.php"><h2>Галерея</h2></a></li>
-            <li><a href="news.php"><h2>Новости</h2></a></li>
-            <li><a href="plus-news.php"><h2>Добавить новости</h2></a></li>
+            <li><a href="http://new/index.php?cntr=Image&act=Galary"><h2>Галерея</h2></a></li>
+            <li><a href="http://new/index.php?cntr=Newsed&act=plusNews"><h2>Добавить новость</h2></a></li>
             <li><a href="../conteyner/exit-admin.php"><h2>Выход</h2></a></li>
         </ul>';
         }
          ?>
           <?php
-           if(ifuser()){
+           if(empty($ifuser)){
                echo '  <form action = "#" method="POST" id = "formeth">
             <table id = "table">
                 <tr>
@@ -61,8 +59,7 @@ require __DIR__ . '/../conteyner/conteyner.php';
       ?>
     </div>
     <?php foreach($news as $newsed): ?>
-        <?php $newseded = $newsed['id']; ?>
-    <?php echo '<a href = "http://localhost/new/vizual/vizual-news.php?id='.$newseded.'"id = "news">'.$newsed['header'].'</a><br>'; ?>
+    <?php echo '<a href = "http://new/index.php?cntr=Newsed&act=One&id='.$newsed->id.'"id = "news">'.$newsed->header.'</a><br>'; ?>
     <?php endforeach; ?>
 </div>
 </body>
