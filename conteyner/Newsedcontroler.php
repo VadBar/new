@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../models/mode.php';
 require_once __DIR__ .'/../function/avtoriz-admin.php';
 
-class Newsed{
+class Newsedcontroler{
     public function actionAll()
     {
         $news = News::article_exit();

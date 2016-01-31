@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../models/mode.php';
 require_once __DIR__ .'/../function/avtoriz-admin.php';
-class Image{
+class Imagecontroler{
     public function actionGalary(){
         $ifuser = ifuser();
         $items = News::exitfile();

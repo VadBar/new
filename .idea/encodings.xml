@@ -3,7 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/autoload.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/conteyner/Startcontroler.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/conteyner/conteyner.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/function/mycql.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/models/mode.php" charset="UTF-8" />
