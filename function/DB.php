@@ -1,5 +1,5 @@
 <?php
-class DB
+class DBcontroler
 {
   public  function __construct()
    {

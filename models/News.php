@@ -1,6 +1,4 @@
 <?php
-require_once(__DIR__ . '/../function/mycql.php');
-session_start();
 class  News
 {
 public $id;
@@ -9,7 +7,7 @@ public $padding;
 public $image;
     public static function article_put($article)
     {
-        $db=new DB;
+        $db=new DBcontroler();
         $lans = "
     INSERT INTO news
     (header,padding,image)
@@ -19,7 +17,7 @@ public $image;
     }
     public static function article_two_put($article)
     {
-        $db=new DB;
+        $db=new DBcontroler();
         $lans = "
         INSERT INTO news
         (header,padding)
@@ -29,7 +27,7 @@ public $image;
     }
     public static function putfile($data)
     {
-        $db=new DB;
+        $db=new DBcontroler();
         $lans = "
         INSERT INTO image
         (puth,title)
@@ -39,21 +37,19 @@ public $image;
     }
     public static function exitfile()
     {
-        $db=new DB;
+        $db=new DBcontroler();
         $resed = 'SELECT * FROM image';
         return $db->queryAll($resed);
     }
     public static function article_exit(){
-        $db=new DB;
+        $db=new DBcontroler();
         $resed = 'SELECT header,id FROM news';
         return $db->queryAll($resed,'News');
     }
     public static function news_exit($id)
     {
-        $db=new DB;
+        $db=new DBcontroler();
         $resed = "SELECT * FROM news WHERE id='".$id."'";
         return $db->queryOne($resed,'News');
     }
 }
-
-?>
